@@ -13,14 +13,10 @@ const Hero = () => {
                     {/* Left Content Area */}
                     <div className="flex flex-col items-start z-10 max-w-xl">
                         {/* Small Top Tag */}
-                        <span className="text-[#ccff00] font-bold text-xs sm:text-sm tracking-widest uppercase mb-3">
-              Workout Library
-            </span>
+                        <span className="text-[#ccff00] font-bold text-xs sm:text-sm tracking-widest uppercase mb-3">Workout Library</span>
 
                         {/* Main Headline */}
-                        <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight uppercase leading-none mb-4">
-                            Train with intent. Log every set.
-                        </h1>
+                        <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight uppercase leading-none mb-4">Train with intent. Log every set.</h1>
 
                         {/* Subtitle description */}
                         <p className="text-neutral-400 text-sm sm:text-base mb-8 leading-relaxed">

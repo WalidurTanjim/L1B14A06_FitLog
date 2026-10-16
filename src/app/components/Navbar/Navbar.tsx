@@ -32,10 +32,10 @@ const Navbar = () => {
             <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
 
                 {/* Left Side: Logo */}
-                <div className="flex items-center gap-3">
+                <Link href={`/`} className="flex items-center gap-3">
                     <Image src={logo} alt={"Logo"} width={100} height={100} className="w-5 h-5" />
                     <span className="font-extrabold tracking-wider text-lg">FITLOG</span>
-                </div>
+                </Link>
 
                 {/* Middle: Navigation Links (Hidden on small devices) */}
                 <nav className="hidden md:flex items-center gap-2 bg-[#1a1a1a] px-2 py-1.5 rounded-full border border-neutral-800">
