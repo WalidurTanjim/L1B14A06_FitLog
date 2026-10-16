@@ -1,7 +1,8 @@
 import React, {Suspense} from 'react';
 import Image from 'next/image';
-import { Calendar, Bookmark } from 'lucide-react';
 import {Exercise} from "@/types/exercise.type";
+import TodaysPlan from "@/app/components/WorkoutDetailsButtons/TodaysPlan/TodaysPlan";
+import ForLater from "@/app/components/WorkoutDetailsButtons/ForLater/ForLater";
 
 interface WorkoutIdParams {
     params: Promise<{
@@ -104,13 +105,9 @@ const DynamicWorkoutDetails = async({ params }: WorkoutIdParams) => {
 
                     {/* Call-to-Action Buttons */}
                     <div className="flex flex-col sm:flex-row items-center gap-4 pt-2">
-                        <button className="w-full sm:w-auto flex-1 inline-flex items-center justify-center gap-2 bg-[#ccff00] hover:bg-[#b3e600] text-black font-bold px-6 py-4 rounded-xl text-sm transition-colors shadow-lg">
-                            <Calendar className="w-4 h-4" />Add to today&apos;s plan
-                        </button>
+                        <TodaysPlan workout={dynamicWorkout} />
 
-                        <button className="w-full sm:w-auto flex-1 inline-flex items-center justify-center gap-2 bg-[#16181c] hover:bg-neutral-800 border border-neutral-800 text-white font-bold px-6 py-4 rounded-xl text-sm transition-colors">
-                            <Bookmark className="w-4 h-4" />Save for later
-                        </button>
+                        <ForLater workout={dynamicWorkout} />
                     </div>
 
                 </div>
