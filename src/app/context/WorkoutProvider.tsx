@@ -7,6 +7,8 @@ interface WorkoutContextType {
     setTodaysPlan: Dispatch<SetStateAction<Exercise[]>>;
     forLater: Exercise[];
     setForLater: Dispatch<SetStateAction<Exercise[]>>;
+    activeTab: 'todaysPlan' | 'saved';
+    setActiveTab: Dispatch<SetStateAction<'todaysPlan' | 'saved'>>;
 }
 
 export const WorkoutContext = createContext<WorkoutContextType | undefined>(undefined);
@@ -14,10 +16,12 @@ export const WorkoutContext = createContext<WorkoutContextType | undefined>(unde
 const WorkoutProvider = ({ children }: { children: React.ReactNode}) => {
     const [todaysPlan, setTodaysPlan] = useState<Exercise[]>([]);
     const [forLater, setForLater] = useState<Exercise[]>([]);
+    const [activeTab, setActiveTab] = useState<'todaysPlan' | 'saved'>('todaysPlan');
 
     const value = {
         todaysPlan, setTodaysPlan,
-        forLater, setForLater
+        forLater, setForLater,
+        activeTab, setActiveTab,
     }
 
     return <WorkoutContext.Provider value={value}>{children}</WorkoutContext.Provider>

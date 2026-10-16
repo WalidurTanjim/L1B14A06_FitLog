@@ -3,12 +3,14 @@ import React from 'react';
 import useWorkout from "@/app/hooks/useWorkout";
 import {Calendar} from "lucide-react";
 import {Exercise} from "@/types/exercise.type";
+import toast from 'react-hot-toast';
 
 const TodaysPlan = ({ workout }: { workout: Exercise }) => {
     const { setTodaysPlan } = useWorkout();
 
     const handleTodaysPlan = () => {
         setTodaysPlan(prev => [...prev, workout]);
+        toast.success("Added to today's plan");
     }
 
     return (

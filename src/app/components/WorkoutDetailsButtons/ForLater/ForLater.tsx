@@ -3,12 +3,14 @@ import React from 'react';
 import {Bookmark} from "lucide-react";
 import useWorkout from "@/app/hooks/useWorkout";
 import {Exercise} from "@/types/exercise.type";
+import toast from 'react-hot-toast';
 
 const ForLater = ({ workout }: { workout: Exercise }) => {
     const { setForLater } = useWorkout();
 
     const handleForLater = () => {
         setForLater(prev => [...prev, workout]);
+        toast.success("Saved for later");
     }
 
     return (

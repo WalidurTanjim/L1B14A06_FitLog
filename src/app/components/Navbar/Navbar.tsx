@@ -42,19 +42,19 @@ const Navbar = () => {
                 {/* Middle: Navigation Links (Hidden on small devices) */}
                 <nav className="hidden md:flex items-center gap-2 bg-[#1a1a1a] px-2 py-1.5 rounded-full border border-neutral-800">
                     <Link href="/" className={getLinkStyles('/')}>Workouts</Link>
-                    <Link href="/my-plan" className={getLinkStyles('/my-plan')}>My Plan</Link>
+                    <Link href="/myPlan" className={getLinkStyles('/myPlan')}>My Plan</Link>
                 </nav>
 
                 {/* Right Side: Status Badges & Mobile Menu Button */}
                 <div className="flex items-center gap-6 text-sm">
                     {/* Status Badges */}
                     <div className="flex items-center gap-4 sm:gap-6">
-                        <Link href={`/my-plan`} className="flex items-center gap-2">
+                        <Link href={`/myPlan`} className="flex items-center gap-2">
                             <span className="text-neutral-300">Plan</span>
                             <span className="w-7 h-7 rounded-full bg-[#ccff00] text-black font-bold flex items-center justify-center text-xs">{todaysPlan.length ? todaysPlan.length : 0}</span>
                         </Link>
 
-                        <Link href={`/my-plan`} className="flex items-center gap-2">
+                        <Link href={`/myPlan`} className="flex items-center gap-2">
                             <span className="text-neutral-300">Saved</span>
                             <span className="w-7 h-7 rounded-full border border-neutral-700 text-neutral-300 font-bold flex items-center justify-center text-xs">{forLater.length ? forLater.length : 0}</span>
                         </Link>
@@ -72,7 +72,7 @@ const Navbar = () => {
             {isOpen && (
                 <div className="md:hidden bg-[#1a1a1a] border-b border-neutral-800 px-6 py-4 flex flex-col gap-3">
                     <Link href="/" onClick={() => setIsOpen(false)} className={getMobileLinkStyles('/')}>Workouts</Link>
-                    <Link href="/my-plan" onClick={() => setIsOpen(false)} className={getMobileLinkStyles('/my-plan')}>My Plan</Link>
+                    <Link href="/myPlan" onClick={() => setIsOpen(false)} className={getMobileLinkStyles('/myPlan')}>My Plan</Link>
                 </div>
             )}
         </header>
