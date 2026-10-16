@@ -1,20 +1,3 @@
-// import React from 'react';
-// import {Exercise} from "@/types/exercise.type";
-//
-// interface WorkoutProps {
-//     workout: Exercise
-// }
-//
-// const WorkoutCard = async({ workout }: WorkoutProps) => {
-//     return (
-//         <div>
-//
-//         </div>
-//     );
-// };
-//
-// export default WorkoutCard;
-
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -27,7 +10,7 @@ interface WorkoutProps {
 
 const WorkoutCard = async ({ workout }: WorkoutProps) => {
     return (
-        <Link href={`/workouts/${workout.id}`} className="group block bg-[#16181c] border border-neutral-800/80 rounded-2xl overflow-hidden hover:border-neutral-700 transition-all duration-200">
+        <Link href={`/workout/${workout.id}`} className="group block bg-[#16181c] border border-neutral-800/80 rounded-2xl overflow-hidden hover:border-neutral-700 transition-all duration-200">
             {/* Image Section */}
             <div className="relative w-full h-48 sm:h-52 overflow-hidden bg-neutral-900">
                 <Image
