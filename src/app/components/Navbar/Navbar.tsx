@@ -6,10 +6,12 @@ import { usePathname } from 'next/navigation';
 import { Menu, X } from 'lucide-react';
 import logo from "@/assets/logo.png";
 import Image from "next/image";
+import useWorkout from "@/app/hooks/useWorkout";
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
     const pathname = usePathname(); // Get the current active route
+    const { todaysPlan, forLater } = useWorkout();
 
     // Helper function to determine link styles based on active state
     const getLinkStyles = (path: string) => {
@@ -49,12 +51,12 @@ const Navbar = () => {
                     <div className="flex items-center gap-4 sm:gap-6">
                         <Link href={`/my-plan`} className="flex items-center gap-2">
                             <span className="text-neutral-300">Plan</span>
-                            <span className="w-7 h-7 rounded-full bg-[#ccff00] text-black font-bold flex items-center justify-center text-xs">0</span>
+                            <span className="w-7 h-7 rounded-full bg-[#ccff00] text-black font-bold flex items-center justify-center text-xs">{todaysPlan.length ? todaysPlan.length : 0}</span>
                         </Link>
 
                         <Link href={`/my-plan`} className="flex items-center gap-2">
                             <span className="text-neutral-300">Saved</span>
-                            <span className="w-7 h-7 rounded-full border border-neutral-700 text-neutral-300 font-bold flex items-center justify-center text-xs">0</span>
+                            <span className="w-7 h-7 rounded-full border border-neutral-700 text-neutral-300 font-bold flex items-center justify-center text-xs">{forLater.length ? forLater.length : 0}</span>
                         </Link>
                     </div>
 
