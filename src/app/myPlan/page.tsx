@@ -14,7 +14,6 @@ const MyPlan = () => {
 
     // বর্তমান সিলেক্টেড ট্যাবের ওপর ভিত্তি করে ডেটা ও স্ট্যাট ক্যালকুলেশন
     const currentList = activeTab === 'todaysPlan' ? todaysPlan : forLater;
-    console.log(currentList);
 
     const totalExercises = currentList.length;
     const totalMinutes = currentList.reduce((acc, item) => acc + (item?.duration || 0), 0);

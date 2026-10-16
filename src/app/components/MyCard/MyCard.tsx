@@ -3,6 +3,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { Clock, Flame, Star, Check, X } from 'lucide-react';
 import { Exercise } from "@/types/exercise.type";
+import RemoveButton from "@/app/components/MyCardButtons/Remove/Remove";
 
 interface CardProps {
     workout: Exercise;
@@ -61,9 +62,7 @@ const MyCard = ({ workout, tab }: CardProps) => {
                 )}
 
                 {/* Remove/Close Button */}
-                <button className="p-1 text-neutral-400 hover:text-white transition-colors ml-1" aria-label="Remove workout">
-                    <X className="w-4 h-4" />
-                </button>
+                <RemoveButton workout={workout} tab={tab} />
             </div>
 
         </div>
