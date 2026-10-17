@@ -19,27 +19,15 @@ const Hero = () => {
                         <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight uppercase leading-none mb-4">Train with intent. Log every set.</h1>
 
                         {/* Subtitle description */}
-                        <p className="text-neutral-400 text-sm sm:text-base mb-8 leading-relaxed">
-                            FitLog is a dark, no-nonsense gym companion: pick a lift, lock it into today&apos;s plan, and watch the week&apos;s work add up.
-                        </p>
+                        <p className="text-neutral-400 text-sm sm:text-base mb-8 leading-relaxed">FitLog is a dark, no-nonsense gym companion: pick a lift, lock it into today&apos;s plan, and watch the week&apos;s work add up.</p>
 
-                        {/* Action Button */}
-                        <Link
-                            href="#library"
-                            className="inline-flex items-center justify-center bg-[#ccff00] hover:bg-[#b3e600] text-black font-bold px-7 py-3.5 rounded-full text-sm transition-colors shadow-lg"
-                        >
-                            Browse Workouts
-                        </Link>
+                        {/* Action Button : Hash tag library added in here */}
+                        <a href="#library" className="inline-flex items-center justify-center bg-[#ccff00] hover:bg-[#b3e600] text-black font-bold px-7 py-3.5 rounded-full text-sm transition-colors shadow-lg">Browse Workouts</a>
                     </div>
 
                     {/* Right Banner Image */}
                     <div className="relative w-full max-w-sm sm:max-w-md lg:max-w-lg flex items-center justify-center z-10">
-                        <Image
-                            src={hero_image}
-                            alt="Workout Banner Character"
-                            priority
-                            className="w-full h-auto object-contain drop-shadow-2xl"
-                        />
+                        <Image src={hero_image} alt="Workout Banner Character" priority className="w-full h-auto object-contain drop-shadow-2xl" />
                     </div>
 
                     {/* Subtle background glow effect matching dark theme */}
