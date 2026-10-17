@@ -1,5 +1,6 @@
 import React, {Suspense} from 'react';
 import WorkoutList from "@/app/components/Workout/WorkoutList/WorkoutList";
+import LibrarySkeleton from "@/app/components/Skeleton/LibrarySkeleton/LibrarySkeleton";
 
 const Library = () => {
     return (
@@ -10,7 +11,7 @@ const Library = () => {
                     <p className="text-neutral-400 text-sm sm:text-base mb-8 leading-relaxed">Twelve lifts covering every major muscle group.</p>
                 </div>
 
-                <Suspense fallback={<p>Loading...</p>}>
+                <Suspense fallback={<LibrarySkeleton />}>
                     <WorkoutList />
                 </Suspense>
             </div>
