@@ -25,7 +25,7 @@ const Hero = () => {
 
                         {/* Action Button */}
                         <Link
-                            href="#workouts-grid"
+                            href="#library"
                             className="inline-flex items-center justify-center bg-[#ccff00] hover:bg-[#b3e600] text-black font-bold px-7 py-3.5 rounded-full text-sm transition-colors shadow-lg"
                         >
                             Browse Workouts
