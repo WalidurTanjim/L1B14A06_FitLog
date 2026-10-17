@@ -1,36 +1,74 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🏋️ FitLog — Workout Library & Daily Gym Companion
 
-## Getting Started
+A dark-themed, no-nonsense gym companion web application built to help users browse exercises, curate their daily workout plan, save routines for later, and track key workout metrics seamlessly.
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## 📝 Short Description
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+**FitLog** is a modern, responsive web application designed for focused gym-goers. It allows users to explore a comprehensive exercise library covering major muscle groups, review detailed movement specifications and step-by-step instructions, organize custom workout routines into "Today's Plan" or "Saved" lists, and monitor live performance stats like total exercises, estimated duration, and burned calories.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🛠️ Technologies Used
 
-## Learn More
+- **Framework:** [Next.js](https://nextjs.org/) (App Router & SSR support)
+- **Styling:** [Tailwind CSS](https://tailwindcss.com/)
+- **UI Component Library:** [DaisyUI](https://daisyui.com/)
+- **Icons:** [Lucide React](https://lucide.dev/)
+- **State Management & Notifications:** React Context / Local State & Toast Notification Library (e.g., React Hot Toast / Sonner)
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## ✨ Key Features
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+1. **Interactive Exercise Library & Smart Sorting:** 
+   Browse a comprehensive collection of exercises organized in a responsive 3x4 grid card layout. Users can dynamic sorting of exercises by **Duration**, **Calories burned**, or **Rating** using a real-time sorting dropdown.
 
-## Deploy on Vercel
+2. **Detailed Workout Guidance:** 
+   Dedicated workout details pages featuring high-resolution exercise illustrations, key specifications (equipment, difficulty, sets, reps, duration, calories, rating), and numbered step-by-step execution instructions.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+3. **Dynamic Daily Plan & Saved List Management:** 
+   Easily add workouts to **Today's Plan** (capped for focus) or **Save for later**. Interactive Navbar badges update live count indicators linking directly to your planned lists.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+4. **Real-Time Metrics Summary Tracker:** 
+   The `/my-plan` dashboard automatically calculates and updates aggregate workout metrics in real time—tracking total **Exercises**, cumulative **Minutes**, and total estimated **Calories** as items are added, completed, or removed.
+
+5. **Interactive Plan Controls & Toast Feedback:** 
+   Full control over workout execution with instant UI feedback: mark exercises as completed with the **"Mark as Done"** check action, remove items from active lists, and receive immediate feedback via toast notifications across all core interactions.
+
+---
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+- Node.js (v18.0.0 or higher)
+- npm, pnpm, or yarn
+
+### Installation
+
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/your-username/fitlog.git
+   cd fitlog
+   ```
+
+2. **Install dependencies:**
+   ```bash
+   npm install
+   ```
+
+3. **Run the development server:**
+   ```bash
+   npm run dev
+   ```
+
+4. **Open in browser:**
+   Navigate to `http://localhost:3000` to view the application.
+
+---
+
+## 📄 License
+
+This project is open-source and available under the [MIT License](LICENSE).
