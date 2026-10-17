@@ -15,6 +15,11 @@ const MarkAsDone = ({ workout }: { workout: CompletedExercise }) => {
     const isDone = workout?.isCompleted || false;
 
     const handleDone = () => {
+        if(isDone) {
+            toast.error("Already completed!");
+            return;
+        }
+
         const updatedItem = todaysPlan.map((item: CompletedExercise) => {
             if(item?.id === workout?.id) {
                 return {...item, isCompleted: true};
