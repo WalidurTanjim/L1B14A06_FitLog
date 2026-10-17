@@ -27,6 +27,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     <html lang="en" className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}>
       <WorkoutProvider>
         <body className="fit_log min-h-full flex flex-col bg-black">
+          {/* Added suspense to reduce usePathname error from Navbar component */}
           <Suspense fallback={<div className="h-16 bg-[#16181c]" />}>
             <Navbar />
           </Suspense>
