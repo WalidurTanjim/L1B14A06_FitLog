@@ -5,6 +5,7 @@ import Navbar from "@/app/components/Navbar/Navbar";
 import Footer from "@/app/components/Footer/Footer";
 import { Toaster } from 'react-hot-toast';
 import WorkoutProvider from "@/app/context/WorkoutProvider";
+import {Suspense} from "react";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -26,7 +27,9 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     <html lang="en" className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}>
       <WorkoutProvider>
         <body className="fit_log min-h-full flex flex-col bg-black">
-          <Navbar />
+          <Suspense fallback={<div className="h-16 bg-[#16181c]" />}>
+            <Navbar />
+          </Suspense>
 
           <main>{children}</main>
 
