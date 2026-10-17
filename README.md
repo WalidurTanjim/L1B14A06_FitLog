@@ -50,8 +50,8 @@ A dark-themed, no-nonsense gym companion web application built to help users bro
 
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/your-username/fitlog.git
-   cd fitlog
+     git clone https://github.com/your-username/fitlog.git](https://github.com/WalidurTanjim/L1B14A06_FitLog.git)
+   cd l1b14a06_fitlog
    ```
 
 2. **Install dependencies:**
