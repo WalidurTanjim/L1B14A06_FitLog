@@ -3,6 +3,7 @@ import React from 'react';
 import { X } from 'lucide-react';
 import useWorkout from "@/app/hooks/useWorkout";
 import {Exercise} from "@/types/exercise.type";
+import toast from "react-hot-toast";
 
 interface RemoveProps {
     workout: Exercise;
@@ -16,9 +17,11 @@ const RemoveButton = ({ workout, tab }: RemoveProps) => {
         if(tab === 'todaysPlan') {
             const rest = todaysPlan.filter((plan: Exercise) => plan?.id !== workout?.id);
             setTodaysPlan(rest);
+            toast.success("Workout has been removed!");
         }else {
             const rest = forLater.filter((plan: Exercise) => plan?.id !== workout?.id);
             setForLater(rest);
+            toast.success("Workout has been removed!");
         }
     }
 
