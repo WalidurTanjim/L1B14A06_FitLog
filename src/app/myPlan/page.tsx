@@ -13,7 +13,16 @@ const MyPlan = () => {
     const [sortBy, setSortBy] = useState('Duration');
 
     // বর্তমান সিলেক্টেড ট্যাবের ওপর ভিত্তি করে ডেটা ও স্ট্যাট ক্যালকুলেশন
-    const currentList = activeTab === 'todaysPlan' ? todaysPlan : forLater;
+    const currentList = activeTab === 'todaysPlan' ? [...todaysPlan] : [...forLater];
+
+    if (sortBy === 'Duration') {
+        currentList.sort((a, b) => (b?.duration || 0) - (a?.duration || 0));
+    } else if (sortBy === 'Calories') {
+        currentList.sort((a, b) => (b?.caloriesBurned || 0) - (a?.caloriesBurned || 0));
+    } else if (sortBy === 'Rating') {
+        currentList.sort((a, b) => (b?.rating || 0) - (a?.rating || 0));
+    }
+
 
     const totalExercises = currentList.length;
     const totalMinutes = currentList.reduce((acc, item) => acc + (item?.duration || 0), 0);
@@ -34,25 +43,19 @@ const MyPlan = () => {
                     {/* Stat 1: Exercises */}
                     <div className="flex flex-col gap-1 pt-4 sm:pt-0 sm:px-6 first:pl-0">
                         <span className="text-neutral-400 text-xs sm:text-sm font-medium">Exercises</span>
-                        <span className="text-[#ccff00] text-3xl sm:text-4xl font-extrabold">
-                            {totalExercises}
-                        </span>
+                        <span className="text-[#ccff00] text-3xl sm:text-4xl font-extrabold">{totalExercises}</span>
                     </div>
 
                     {/* Stat 2: Minutes */}
                     <div className="flex flex-col gap-1 pt-4 sm:pt-0 sm:px-6">
                         <span className="text-neutral-400 text-xs sm:text-sm font-medium">Minutes</span>
-                        <span className="text-white text-3xl sm:text-4xl font-extrabold">
-                            {totalMinutes}
-                        </span>
+                        <span className="text-white text-3xl sm:text-4xl font-extrabold">{totalMinutes}</span>
                     </div>
 
                     {/* Stat 3: Calories */}
                     <div className="flex flex-col gap-1 pt-4 sm:pt-0 sm:px-6">
                         <span className="text-neutral-400 text-xs sm:text-sm font-medium">Calories</span>
-                        <span className="text-white text-3xl sm:text-4xl font-extrabold">
-                            {totalCalories}
-                        </span>
+                        <span className="text-white text-3xl sm:text-4xl font-extrabold">{totalCalories}</span>
                     </div>
                 </div>
 
@@ -76,7 +79,7 @@ const MyPlan = () => {
 
                     {/* Sort By Dropdown */}
                     <div className="flex items-center gap-3">
-                        <span className="text-neutral-400 text-sm">Sort By</span>
+                        <span className="text-neutral-400 text-sm">Sort By: (Descending)</span>
                         <select value={sortBy} onChange={(e) => setSortBy(e.target.value)} className="select bg-[#16181c] text-white border border-neutral-800 rounded-xl text-sm focus:outline-none focus:border-neutral-600 px-4 py-2 cursor-pointer">
                             <option value="Duration">Duration</option>
                             <option value="Calories">Calories</option>
