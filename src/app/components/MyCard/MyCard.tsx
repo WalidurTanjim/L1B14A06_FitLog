@@ -1,9 +1,10 @@
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { Clock, Flame, Star, Check, X } from 'lucide-react';
+import { Clock, Flame, Star } from 'lucide-react';
 import { Exercise } from "@/types/exercise.type";
 import RemoveButton from "@/app/components/MyCardButtons/Remove/Remove";
+import MarkAsDone from "@/app/components/MyCardButtons/MarkAsDone/MarkAsDone";
 
 interface CardProps {
     workout: Exercise;
@@ -55,10 +56,7 @@ const MyCard = ({ workout, tab }: CardProps) => {
 
                 {/* Button 2: Mark as Done (Only rendered when tab === 'todaysPlan') */}
                 {tab === 'todaysPlan' && (
-                    <button className="flex items-center justify-center gap-1.5 bg-[#ccff00] hover:bg-[#b3e600] text-black font-bold px-4 py-2 rounded-full text-xs transition-colors">
-                        <Check className="w-3.5 h-3.5 stroke-[3]" />
-                        <span>Mark as Done</span>
-                    </button>
+                    <MarkAsDone workout={workout} />
                 )}
 
                 {/* Remove/Close Button */}
