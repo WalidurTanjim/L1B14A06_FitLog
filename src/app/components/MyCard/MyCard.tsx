@@ -13,7 +13,7 @@ interface CardProps {
 
 const MyCard = ({ workout, tab }: CardProps) => {
     return (
-        <div className="w-full bg-[#16181c] border border-neutral-800/80 rounded-2xl p-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 transition-all mb-5">
+        <div className="w-full bg-[#16181c] border border-neutral-800/80 rounded-2xl p-4 flex flex-col md:flex-row items-start md:items-center justify-between gap-4 transition-all mb-5">
 
             {/* Left Section: Thumbnail Image & Info */}
             <div className="flex items-center gap-4 w-full ">
